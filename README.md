@@ -10,7 +10,7 @@ Python, Tkinter, MySQL
 
 ## Screenshots
 
-<img src='img1.png' alt='Sample Image'/>
+<img src='img.png' alt='Sample Image'/>
 
 ## Run Locally
 
