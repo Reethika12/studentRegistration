@@ -30,12 +30,12 @@ def Add():
     mycursor = mysqldb.cursor()
 
     try:
-        sql = "INSERT INTO  registation (studid, studname, coursename, feee) VALUES (%s, %s, %s, %s)"
+        sql = "INSERT INTO  registration (studid, studname, coursename, feee) VALUES (%s, %s, %s, %s)"
         val = (studid, studname, coursename, feee)
         mycursor.execute(sql, val)
         mysqldb.commit()
         lastid = mycursor.lastrowid
-        messagebox.showinfo("information", "Employee inserted successfully...")
+        messagebox.showinfo("information", "Student registration successfull")
         e1.delete(0, END)
         e2.delete(0, END)
         e3.delete(0, END)
@@ -58,12 +58,12 @@ def update():
     mycursor = mysqldb.cursor()
 
     try:
-        sql = "Update  registation set studname= %s,coursename= %s,feee= %s where studid= %s"
+        sql = "Update  registration set studname= %s,coursename= %s,feee= %s where studid= %s"
         val = (studname, coursename, feee, studid)
         mycursor.execute(sql, val)
         mysqldb.commit()
         lastid = mycursor.lastrowid
-        messagebox.showinfo("information", "Record Updateddddd successfully...")
+        messagebox.showinfo("information", "Record update successfull")
 
         e1.delete(0, END)
         e2.delete(0, END)
@@ -87,12 +87,12 @@ def delete():
     mycursor = mysqldb.cursor()
 
     try:
-        sql = "delete from registation where studid = %s"
+        sql = "delete from registration where studid = %s"
         val = (studid,)
         mycursor.execute(sql, val)
         mysqldb.commit()
         lastid = mycursor.lastrowid
-        messagebox.showinfo("information", "Record Deleteeeee successfully...")
+        messagebox.showinfo("information", "Record Delete successfully...")
 
         e1.delete(0, END)
         e2.delete(0, END)
@@ -112,7 +112,7 @@ def show():
         host="localhost", user="root", password="ammanana204", database="payroll"
     )
     mycursor = mysqldb.cursor()
-    mycursor.execute("SELECT * FROM registation")
+    mycursor.execute("SELECT * FROM registration")
     records = mycursor.fetchall()
     print(records)
     print(listBox.see)
@@ -133,7 +133,7 @@ global e2
 global e3
 global e4
 
-tk.Label(root, text="Student Registation", fg="red", font=(None, 30)).place(x=300, y=5)
+tk.Label(root, text="Student Registration", fg="red", font=(None, 30)).place(x=300, y=5)
 
 tk.Label(root, text="Student ID").place(x=10, y=10)
 Label(root, text="Student Name").place(x=10, y=40)
